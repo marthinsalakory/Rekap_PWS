@@ -229,7 +229,7 @@ include '../config/koneksi.php';
                         <select name="operator">
                           <option value="">Operator</option>
                           <?php
-                          $query = "SELECT * FROM operator WHERE role = 'p2'";
+                          $query = "SELECT nama FROM operator WHERE role = 'p2'  GROUP BY nama";
                           $sql = mysqli_query($conn, $query);
 
                           while ($data = mysqli_fetch_array($sql)) {
@@ -253,7 +253,7 @@ include '../config/koneksi.php';
                         <select name="helper">
                           <option value="">Helper</option>
                           <?php
-                          $query = "SELECT nama_helper FROM operator GROUP BY nama_helper";
+                          $query = "SELECT nama_helper FROM operator WHERE role = 'p2'  GROUP BY nama_helper";
                           $sql = mysqli_query($conn, $query);
 
                           while ($data = mysqli_fetch_array($sql)) {
@@ -303,7 +303,7 @@ include '../config/koneksi.php';
                         <select name="jenis_unit">
                           <option value="">Jenis Unit</option>
                           <?php
-                          $query = "SELECT jenis_unit FROM unit GROUP BY jenis_unit";
+                          $query = "SELECT jenis_unit FROM operator WHERE role = 'p2' GROUP BY jenis_unit";
                           $sql = mysqli_query($conn, $query);
 
                           while ($data = mysqli_fetch_array($sql)) {

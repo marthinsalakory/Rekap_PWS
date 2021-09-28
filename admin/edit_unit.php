@@ -217,7 +217,7 @@ error_reporting(0);
                     <div class="col-md-6">
 
                       <P><b>Kode Unit:</b></p>
-                      <input class="form-control" type="number" name='kode_unit' placeholder="Kode Unit Baru..." value="<?php echo $d['kode_unit']; ?>" required>
+                      <input class="form-control" type="text" name='kode_unit' placeholder="Kode Unit Baru..." value="<?php echo $d['kode_unit']; ?>" required>
 
                       <P><b>Jenis Unit:</b></p>
                       <input class="form-control" type="text" name='jenis_unit' placeholder="Jenis Unit Baru..." value="<?php echo $d['jenis_unit']; ?>" required>

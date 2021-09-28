@@ -113,7 +113,6 @@ error_reporting(0);
             <a class="collapse-item" href="tab_unit.php">Table Unit</a>
             <a class="collapse-item" href="tab_operator.php">Tabel Operator</a>
             <a class="collapse-item" href="tab_kegiatan.php">Table Kegiatan</a>
-            <!--  <a class="collapse-item" href="tab_timesheet.php">Table Timesheet</a> -->
             <a class="collapse-item" href="tab_laporan_perbulan.php">Table Laporan Akhir</a>
           </div>
         </div>

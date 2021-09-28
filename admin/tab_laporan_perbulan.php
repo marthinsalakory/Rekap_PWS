@@ -368,10 +368,11 @@ error_reporting(0);
                       }
                       ?>
 
-                      <td colspan="7" style="text-align: left; font-size: 17px;">Total :</td>
+                      <td colspan="6" style="text-align: left; font-size: 17px;">Total :</td>
                       <td style="font-size: 17px; text-align: left; ">
                         <font style="color: green;"><?php echo ($total); ?></font>
                       </td>
+                      <td colspan="2"></td>
                       </tr>
                       <tr>
 

@@ -221,8 +221,11 @@ error_reporting(0);
                       <input class="form-control" type="text" name='kode_operator' placeholder="Kode Operator..." value="<?php echo $d['kode_operator']; ?>" required>
 
 
-                      <P><b>Nama:</b></p>
+                      <P><b>Operator:</b></p>
                       <input class="form-control" type="text" name='nama' value="<?php echo $d['nama']; ?>" placeholder="Nama..." required>
+
+                      <P><b>Helper:</b></p>
+                      <input class="form-control" type="text" name='nama_helper' value="<?php echo $d['nama_helper']; ?>" placeholder="Helper..." required>
 
                       <P><b>Jenis Unit:</b></p>
                       <input class="form-control" type="text" name='jenis_unit' value="<?php echo $d['jenis_unit']; ?>" placeholder="Kode Aktivitas..." required>
@@ -252,6 +255,7 @@ error_reporting(0);
 
               $kode_operator = htmlspecialchars($_POST['kode_operator']);
               $nama = htmlspecialchars($_POST['nama']);
+              $nama_helper = htmlspecialchars($_POST['nama_helper']);
               $jenis_unit = htmlspecialchars($_POST['jenis_unit']);
               $hm = htmlspecialchars($_POST['hm']);
 
@@ -263,6 +267,7 @@ error_reporting(0);
 
        kode_operator ='$kode_operator',
        nama ='$nama',
+       nama_helper ='$nama_helper',
        jenis_unit ='$jenis_unit',
        hm ='$hm'
         WHERE id ='" . $_GET['id'] . "'
