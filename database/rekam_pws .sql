@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Sep 2021 pada 14.25
+-- Waktu pembuatan: 28 Sep 2021 pada 14.43
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.3.29
 
@@ -20,38 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `rekam_pws`
 --
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `helper`
---
-
-CREATE TABLE `helper` (
-  `id` int(25) NOT NULL,
-  `tanggal` date NOT NULL,
-  `kode_helper` varchar(250) NOT NULL,
-  `nama1` varchar(250) NOT NULL,
-  `jenis_unit1` varchar(250) NOT NULL,
-  `hm1` varchar(250) NOT NULL,
-  `jabatan1` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `helper`
---
-
-INSERT INTO `helper` (`id`, `tanggal`, `kode_helper`, `nama1`, `jenis_unit1`, `hm1`, `jabatan1`) VALUES
-(1, '2021-04-01', 'BD13', 'Robi Afrizal', 'Bulldozer DS-01', '69,4', 'Helper'),
-(2, '2021-04-01', 'BD13', 'Deni Purwanto', 'Bulldozer DS-01', '77,5', 'helper'),
-(3, '2021-04-01', 'DS.34', 'M. Tohari', 'Excavator PWS-01', '102,1', 'helper'),
-(4, '2021-04-01', '-', 'Kisdianto ', 'Relief Gdr 01 dan Gdr 03', '103,4', 'helper'),
-(5, '2021-04-01', 'DS.35', 'Rezi Pratama', 'Excavator PWS-02', '92,6', 'helper'),
-(6, '2021-04-01', 'Exca.02', 'Yosep Ardiansa', 'Relief Exca.01 Dan Exca.02', '99,6', 'helper'),
-(7, '2021-04-01', 'GD.10', 'Rudi Hartono', 'Grader 02 (GD.10)', '75,9', 'helper\r\n'),
-(8, '2021-04-01', 'GD.10', 'Turiadi', 'Grader 02 (GD.10)', '72,3', 'helper'),
-(9, '2021-04-01', 'GD.09', 'Prandi Jaya', 'Grader 01', '97,7', 'helper'),
-(10, '2021-04-01', 'GD.011', 'Hairudin', 'Grader 03', '101,1', 'helper\r\n');
 
 -- --------------------------------------------------------
 
@@ -106,7 +74,7 @@ CREATE TABLE `operator` (
 --
 
 INSERT INTO `operator` (`id`, `tanggal`, `kode_operator`, `nama`, `nama_helper`, `jenis_unit`, `hm`, `role`) VALUES
-(6, '2021-04-01', 'BD13', 'Moh.Priyanto', 'Robi Afrizal', 'Bulldozer DS-01', '69,4', 'p1'),
+(6, '2021-04-01', 'BD13', 'Moh.Priyanto', 'Robi Afrizall', 'Bulldozer DS-01', '69,4', 'p1'),
 (8, '2021-04-01', 'BD13', 'Sugianto', 'Deni Purwanto', 'Bulldozer DS-01', '77,5', 'p2'),
 (10, '2021-07-01', 'DS.34', 'Gunawan', 'M. Tohari', 'Excavator PWS-01', '102,1', 'p3'),
 (12, '2021-04-01', 'DS.35', 'Naim Romdani', 'Rezi Pratama', 'Excavator PWS-02', '92,6', 'p1'),
@@ -117,7 +85,8 @@ INSERT INTO `operator` (`id`, `tanggal`, `kode_operator`, `nama`, `nama_helper`,
 (22, '2021-04-01', 'GD.011', 'Adi Kristian', 'Hairudin', 'Grader 03', '101,1', 'p3'),
 (24, '2021-04-01', '-', 'Krisdianto', 'Kisdianto ', 'Relief Gdr 01 dan Gdr 03', '103,4', 'p1'),
 (27, '2021-09-04', 'da', 'Muhammad Avila Landry', 'Muhammad Avila Landry', 'Grader KOMATSU GD535', '1', 'p2'),
-(28, '2021-09-26', '21321', 'marthinn', 'marthin', '3212', '12', 'p3');
+(28, '2021-09-26', '21321', 'marthinn', 'marthin', '3212', '12', 'p3'),
+(29, '2021-04-01', '1', 'siswanto/suwanto', 'Alex/Eduard', 'FibratorSakai03', '144.6', 'p1');
 
 -- --------------------------------------------------------
 
@@ -189,18 +158,11 @@ INSERT INTO `users` (`id`, `username`, `password`, `nama`, `foto`, `role`) VALUE
 (4, 'pekerja2', 'f1d424470eca44dd6441271882127c4e', 'PEKERJA2', 'PWS Logo.jpg', 'pekerja2'),
 (7, 'marthin', '9e8387ae6a13bfc27b3389368134def3', 'MARTHIN', 'MyMotor.jpg', 'admin'),
 (10, 'pekerja3', '2993cdecf608f97fbdbc5f8c5246eb1c', 'PEKERJA3', 'ilearning.jpg', 'pekerja3'),
-(12, 'tes', '28b662d883b6d76fd96e4ddc5e9ba780', 'tes', 'default.png', 'admin'),
 (13, 'nining', 'd844d7002741826f01a93f58e67effa1', 'NINING', 'nining.jpg', 'pimpinan');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indeks untuk tabel `helper`
---
-ALTER TABLE `helper`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `kegiatan`
@@ -231,12 +193,6 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `helper`
---
-ALTER TABLE `helper`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
---
 -- AUTO_INCREMENT untuk tabel `kegiatan`
 --
 ALTER TABLE `kegiatan`
@@ -246,7 +202,7 @@ ALTER TABLE `kegiatan`
 -- AUTO_INCREMENT untuk tabel `operator`
 --
 ALTER TABLE `operator`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT untuk tabel `unit`
