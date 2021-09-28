@@ -61,23 +61,45 @@ error_reporting(0);
         Master Data
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-diagnoses"></i>
-          <span>Master Data</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Master Data</h6>
-            <a class="collapse-item" href="unit.php">Unit: </a>
-            <a class="collapse-item" href="operator.php">Operator: </a>
-            <a class="collapse-item" href="kegiatan.php">Kegiatan: </a>
-            <!-- <a class="collapse-item" href="timesheet.php">Timesheet: </a> -->
+      <?php if ($_SESSION['role'] == 'admin') { ?>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-diagnoses"></i>
+            <span>Master Data</span>
+          </a>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Master Data</h6>
+              <a class="collapse-item" href="unit.php">Unit: </a>
+              <a class="collapse-item" href="operator.php">Operator: </a>
+              <a class="collapse-item" href="kegiatan.php">Kegiatan: </a>
+              <!-- <a class="collapse-item" href="timesheet.php">Timesheet: </a> -->
 
+            </div>
           </div>
-        </div>
-      </li>
+        </li>
+      <?php } else { ?>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-diagnoses"></i>
+            <span>Master Data</span>
+          </a>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Master Data</h6>
+              <?php if ($_SESSION['role'] == 'pekerja1') { ?>
+                <a class="collapse-item" href="kegiatan1.php">Kegiatan</a>
+              <?php } elseif ($_SESSION['role'] == 'pekerja2') { ?>
+                <a class="collapse-item" href="kegiatan2.php">Kegiatan</a>
+              <?php } elseif ($_SESSION['role'] == 'pekerja3') { ?>
+                <a class="collapse-item" href="kegiatan3.php">Kegiatan</a>
+              <?php } ?>
+            </div>
+          </div>
+        </li>
+      <?php } ?>
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <!--         <li class="nav-item">
@@ -101,22 +123,43 @@ error_reporting(0);
         Table Data
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Table</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="tab_unit.php">Table Unit</a>
-            <a class="collapse-item" href="tab_operator.php">Tabel Operator</a>
-            <a class="collapse-item" href="tab_kegiatan.php">Table Kegiatan</a>
-            <a class="collapse-item" href="tab_laporan_perbulan.php">Table Laporan Akhir</a>
+      <?php if ($_SESSION['role'] == 'admin') { ?>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Table</span>
+          </a>
+          <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Login Screens:</h6>
+              <a class="collapse-item" href="tab_unit.php">Table Unit</a>
+              <a class="collapse-item" href="tab_operator.php">Tabel Operator</a>
+              <a class="collapse-item" href="tab_kegiatan.php">Table Kegiatan</a>
+              <a class="collapse-item" href="tab_laporan_perbulan.php">Table Laporan Akhir</a>
+            </div>
           </div>
-        </div>
-      </li>
+        </li>
+      <?php } else { ?>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Table</span>
+          </a>
+          <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Login Screens:</h6>
+              <?php if ($_SESSION['role'] == 'pekerja1') { ?>
+                <a class="collapse-item" href="tab_kegiatan1.php">Table Kegiatan</a>
+              <?php } elseif ($_SESSION['role'] == 'pekerja2') { ?>
+                <a class="collapse-item" href="tab_kegiatan2.php">Table Kegiatan</a>
+              <?php } elseif ($_SESSION['role'] == 'pekerja3') { ?>
+                <a class="collapse-item" href="tab_kegiatan3.php">Table Kegiatan</a>
+              <?php } ?>
+            </div>
+          </div>
+        </li>
+      <?php } ?>
 
 
       <!-- Sidebar Toggler (Sidebar) -->
@@ -285,7 +328,15 @@ error_reporting(0);
 
                 </div>
                 <div class="col-md-3">
-                  <a href="tab_kegiatan.php"><button type="button" class="btn btn-info">Kembali Lagi</button></a>
+                  <?php if ($_SESSION['role'] == 'admin') { ?>
+                    <a href="tab_kegiatan.php"><button type="button" class="btn btn-info">Kembali Lagi</button></a>
+                  <?php } elseif ($_SESSION['role'] == 'pekerja1') { ?>
+                    <a href="tab_kegiatan1.php"><button type="button" class="btn btn-info">Kembali Lagi</button></a>
+                  <?php } elseif ($_SESSION['role'] == 'pekerja2') { ?>
+                    <a href="tab_kegiatan2.php"><button type="button" class="btn btn-info">Kembali Lagi</button></a>
+                  <?php } elseif ($_SESSION['role'] == 'pekerja3') { ?>
+                    <a href="tab_kegiatan3.php"><button type="button" class="btn btn-info">Kembali Lagi</button></a>
+                  <?php } ?>
                 </div>
 
 

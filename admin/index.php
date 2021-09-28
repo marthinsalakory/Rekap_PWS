@@ -2,7 +2,7 @@
 session_start();
 
 if ($_SESSION['role'] != 'admin') {
-  header("location: login.php");
+  header("location: logout.php");
 }
 include '../config/koneksi.php';
 

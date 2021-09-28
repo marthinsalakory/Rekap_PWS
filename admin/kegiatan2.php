@@ -317,14 +317,14 @@ include '../config/koneksi.php';
                     <div class="row mt-3">
                       <div class="col-sm-3">
                         <label>Dari Jam:</label>
-                        <input class="form-control form-control-sm" type="number" placeholder="Dari Jam..." aria-label=".form-control-sm example" id="dari_jam" name='dari_jam' onkeyup="sum();" required>
+                        <input class="form-control form-control-sm" type="text" placeholder="Dari Jam..." aria-label=".form-control-sm example" id="dari_jam" name='dari_jam' onkeyup="sum();" required>
                       </div>
                     </div>
 
                     <div class="row mt-3">
                       <div class="col-sm-3">
                         <label>Sampai Jam:</label>
-                        <input class="form-control form-control-sm" type="number" placeholder="Sampai Jam..." aria-label=".form-control-sm example" id="sampai_jam" name='sampai_jam' onkeyup="sum();" required>
+                        <input class="form-control form-control-sm" type="text" placeholder="Sampai Jam..." aria-label=".form-control-sm example" id="sampai_jam" name='sampai_jam' onkeyup="sum();" required>
                       </div>
                     </div>
 
@@ -381,17 +381,18 @@ include '../config/koneksi.php';
                     $tanggal = htmlspecialchars($_POST['tanggal']);
                     $operator = htmlspecialchars($_POST['operator']);
                     $helper = htmlspecialchars($_POST['helper']);
-                    $jenis_aktivitas = htmlspecialchars($_POST['jenis_aktivitas']);
+                    $jenis_aktifitas = htmlspecialchars($_POST['jenis_aktifitas']);
                     $jenis_unit = htmlspecialchars($_POST['jenis_unit']);
                     $dari_jam = htmlspecialchars($_POST['dari_jam']);
                     $sampai_jam = htmlspecialchars($_POST['sampai_jam']);
+                    $total = htmlspecialchars($_POST['total']);
                     $lokasi = htmlspecialchars($_POST['lokasi']);
                     $aktivitas = htmlspecialchars($_POST['aktivitas']);
 
 
 
 
-                    $wet = mysqli_query($conn, "select * from kegiatan where tanggal ='$tanggal' and operator ='$operator' and helper ='$helper' and jenis_aktivitas ='$jenis_aktivitas' and jenis_unit='$jenis_unit' and dari_jam='$dari_jam' and sampai_jam='$sampai_jam' and lokasi ='$lokasi' and aktivitas='$aktivitas'");
+                    $wet = mysqli_query($conn, "SELECT * FROM kegiatan WHERE tanggal ='$tanggal' AND operator ='$operator' AND helper ='$helper' AND jenis_aktifitas ='$jenis_aktifitas' AND jenis_unit='$jenis_unit' AND dari_jam='$dari_jam' AND sampai_jam='$sampai_jam' AND lokasi ='$lokasi' AND aktivitas='$aktivitas'");
                     $chak = mysqli_num_rows($wet);
                     if ($chak > 0) {
 
@@ -399,11 +400,11 @@ include '../config/koneksi.php';
                       $tanggal === $rew['tanggal'];
                       $operator === $rew['operator'];
                       $helper === $rew['helper'];
-                      $jenis_aktivitas === $rew['jenis_aktivitas'];
+                      $jenis_aktifitas === $rew['jenis_aktifitas'];
                       $jenis_unit === $rew['jenis_unit'];
                       $dari_jam === $rew['dari_jam'];
                       $sampai_jam === $rew['sampai_jam'];
-                      //  $total === $rew['total'];
+                      $total === $rew['total'];
                       $lokasi === $rew['lokasi'];
                       $aktivitas === $rew['aktivitas'];
 
@@ -422,13 +423,14 @@ NULL,
 '$tanggal',
 '$operator',
 '$helper',
-'$jenis_aktivitas',
 '$jenis_unit',
 '$dari_jam',
 '$sampai_jam',
+'$total',
 '$lokasi',
+'$jenis_aktifitas',
 '$aktivitas'
-  )");
+)");
 
                       if ($insert) {
                         echo "<div class='col-md-10 col-sm-12 col-xs-12'>";
