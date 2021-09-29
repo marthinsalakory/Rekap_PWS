@@ -393,10 +393,15 @@ include '../config/koneksi.php';
                     $jenis_aktifitas = htmlspecialchars($_POST['jenis_aktifitas']);
                     $aktivitas = htmlspecialchars($_POST['aktivitas']);
 
+                    // tentukan filter role sesuai role tabel operator
+                    $role = mysqli_query($conn, "SELECT * FROM operator WHERE nama = '$operator'");
+                    $role = mysqli_fetch_array($role);
+                    $role = $role['role'];
 
 
 
-                    $wet = mysqli_query($conn, "select * from kegiatan where tanggal ='$tanggal' and operator ='$operator' and helper ='$helper' and jenis_unit='$jenis_unit' and dari_jam='$dari_jam' and sampai_jam='$sampai_jam' and total='$total' and lokasi ='$lokasi' and jenis_aktifitas='$jenis_aktifitas' and aktivitas='$aktivitas'");
+
+                    $wet = mysqli_query($conn, "SELECT * FROM kegiatan WHERE tanggal ='$tanggal' AND operator ='$operator' AND helper ='$helper' AND jenis_unit='$jenis_unit' AND dari_jam='$dari_jam' AND sampai_jam='$sampai_jam' AND total='$total' AND lokasi ='$lokasi' AND jenis_aktifitas='$jenis_aktifitas' AND aktivitas='$aktivitas' AND role='$role'");
                     $chak = mysqli_num_rows($wet);
                     if ($chak > 0) {
 
@@ -411,6 +416,7 @@ include '../config/koneksi.php';
                       $lokasi === $rew['lokasi'];
                       $jenis_aktifitas === $rew['jenis_aktifitas'];
                       $aktivitas === $rew['aktivitas'];
+                      $role === $rew['role'];
 
 
                       echo "<div class='col-md-10 col-sm-12 col-xs-12 ml-5'>";
@@ -433,7 +439,8 @@ include '../config/koneksi.php';
       '$total',
       '$lokasi',
       '$jenis_aktifitas',
-      '$aktivitas'
+      '$aktivitas',
+      '$role'
         )");
 
                       if ($insert) {

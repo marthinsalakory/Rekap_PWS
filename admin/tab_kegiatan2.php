@@ -309,25 +309,23 @@ error_reporting(0);
 
                   ?>
                       <tbody>
-                        <tr>
-                          <th scope="row"><?php echo $row['tanggal'] ?></th>
-                          <td><?php echo $row['operator'] ?></td>
-                          <td><?php echo $row['helper'] ?></td>
-                          <th scope="row"><?php echo $row['jenis_aktifitas'] ?></th>
+                        <?php if ($row['role'] == 'p2') { ?>
+                          <tr>
+                            <th scope="row"><?php echo $row['tanggal'] ?></th>
+                            <td><?php echo $row['operator'] ?></td>
+                            <td><?php echo $row['helper'] ?></td>
+                            <th scope="row"><?php echo $row['jenis_aktifitas'] ?></th>
 
-                          <td><?php echo $row['jenis_unit'] ?></td>
-                          <td><?php echo $row['dari_jam'] ?></td>
-                          <td><?php echo $row['sampai_jam'] ?></td>
-                          <td><?php echo $row['total'] ?></td>
-                          <td><?php echo $row['lokasi'] ?></td>
-                          <td><?php echo $row['aktivitas'] ?></td>
+                            <td><?php echo $row['jenis_unit'] ?></td>
+                            <td><?php echo $row['dari_jam'] ?></td>
+                            <td><?php echo $row['sampai_jam'] ?></td>
+                            <td><?php echo $row['total'] ?></td>
+                            <td><?php echo $row['lokasi'] ?></td>
+                            <td><?php echo $row['aktivitas'] ?></td>
 
-                          <td>&nbsp;<a href="edit_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-success">Edit</button></a> &nbsp; <a href="hapus_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-danger">Hapus</button></a> &nbsp; <a href="detail_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-info">Detail</button></a></td>
-
-
-                          <!-- <td>&nbsp;<a href="edit_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-success">Edit</button></a> &nbsp; <a href="hapus_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-danger">Hapus</button></a> &nbsp; <a href="detail_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-info">Detail</button></a></td> -->
-
-                        </tr>
+                            <td>&nbsp;<a href="edit_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-success">Edit</button></a> &nbsp; <a href="hapus_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-danger">Hapus</button></a> &nbsp; <a href="detail_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-info">Detail</button></a></td>
+                          </tr>
+                        <?php } ?>
 
                       </tbody>
 

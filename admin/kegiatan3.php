@@ -151,7 +151,6 @@ include '../config/koneksi.php';
 
             <?php
             $rrr = user();
-            ?> = mysqli_fetch_array($sss);
             ?>
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -208,8 +207,7 @@ include '../config/koneksi.php';
                   </center>
 
                   <form action='' name='submit' method='post'>
-
-
+                    <input type="hidden" name="role" value="p3">
                     <div class="row">
                       <div class="col-sm-4">
                         <label>Tanggal Pembuatan:</label>
@@ -389,11 +387,12 @@ include '../config/koneksi.php';
                     $total = htmlspecialchars($_POST['total']);
                     $lokasi = htmlspecialchars($_POST['lokasi']);
                     $aktivitas = htmlspecialchars($_POST['aktivitas']);
+                    $role = htmlspecialchars($_POST['role']);
 
 
 
 
-                    $wet = mysqli_query($conn, "SELECT * FROM kegiatan WHERE tanggal ='$tanggal' AND operator ='$operator' AND helper ='$helper' AND jenis_aktifitas ='$jenis_aktifitas' AND jenis_unit='$jenis_unit' AND dari_jam='$dari_jam' AND sampai_jam='$sampai_jam' AND lokasi ='$lokasi' AND aktivitas='$aktivitas'");
+                    $wet = mysqli_query($conn, "SELECT * FROM kegiatan WHERE tanggal ='$tanggal' AND operator ='$operator' AND helper ='$helper' AND jenis_aktifitas ='$jenis_aktifitas' AND jenis_unit='$jenis_unit' AND dari_jam='$dari_jam' AND sampai_jam='$sampai_jam' AND lokasi ='$lokasi' AND aktivitas='$aktivitas' AND role = '$role'");
                     $chak = mysqli_num_rows($wet);
                     if ($chak > 0) {
 
@@ -408,6 +407,7 @@ include '../config/koneksi.php';
                       $total === $rew['total'];
                       $lokasi === $rew['lokasi'];
                       $aktivitas === $rew['aktivitas'];
+                      $role === $rew['role'];
 
 
                       echo "<div class='col-md-10 col-sm-12 col-xs-12 ml-5'>";
@@ -430,7 +430,8 @@ NULL,
 '$total',
 '$lokasi',
 '$jenis_aktifitas',
-'$aktivitas'
+'$aktivitas',
+'$role'
 )");
 
                       if ($insert) {
