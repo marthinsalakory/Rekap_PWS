@@ -28,7 +28,6 @@ include '../config/koneksi.php';
                        <th scope="col">Kode Operator</th>
                        <th scope="col">Nama</th>
                        <th scope="col">Jenis Unit</th>
-                       <th scope="col">Jabatan</th>
                        <th scope="col">Hour/Meter Akhir</th>
                           
                      </tr>
@@ -42,7 +41,6 @@ include '../config/koneksi.php';
             <td><center><?php echo $row['kode_operator'] ?></td>
             <td><center><?php echo $row['nama'] ?></td>
             <td><center><?php echo $row['jenis_unit'] ?></td>
-            <td><center><?php echo $row['jabatan'] ?></td>
              <td><center><?php echo $row['hm'] ?></td>
             </tr>
   <?php

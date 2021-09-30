@@ -297,7 +297,7 @@ error_reporting(0);
                       echo "</div>";
                     }
                   } else {
-                    $brg = mysqli_query($conn, "SELECT * FROM kegiatan orders LIMIT $start, $hal");
+                    $brg = mysqli_query($conn, "SELECT * FROM kegiatan WHERE role = 'p1' LIMIT $start, $hal");
                   }
 
 
@@ -310,23 +310,21 @@ error_reporting(0);
 
                   ?>
                       <tbody>
-                        <?php if ($row['role'] == 'p1') { ?>
-                          <tr>
-                            <th scope="row"><?php echo $row['tanggal'] ?></th>
-                            <td><?php echo $row['operator'] ?></td>
-                            <td><?php echo $row['helper'] ?></td>
-                            <th scope="row"><?php echo $row['jenis_aktifitas'] ?></th>
+                        <tr>
+                          <th scope="row"><?php echo $row['tanggal'] ?></th>
+                          <td><?php echo $row['operator'] ?></td>
+                          <td><?php echo $row['helper'] ?></td>
+                          <th scope="row"><?php echo $row['jenis_aktifitas'] ?></th>
 
-                            <td><?php echo $row['jenis_unit'] ?></td>
-                            <td><?php echo $row['dari_jam'] ?></td>
-                            <td><?php echo $row['sampai_jam'] ?></td>
-                            <td><?php echo $row['total'] ?></td>
-                            <td><?php echo $row['lokasi'] ?></td>
-                            <td><?php echo $row['aktivitas'] ?></td>
+                          <td><?php echo $row['jenis_unit'] ?></td>
+                          <td><?php echo $row['dari_jam'] ?></td>
+                          <td><?php echo $row['sampai_jam'] ?></td>
+                          <td><?php echo $row['total'] ?></td>
+                          <td><?php echo $row['lokasi'] ?></td>
+                          <td><?php echo $row['aktivitas'] ?></td>
 
-                            <td>&nbsp;<a href="edit_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-success">Edit</button></a> &nbsp; <a href="hapus_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-danger">Hapus</button></a> &nbsp; <a href="detail_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-info">Detail</button></a></td>
-                          </tr>
-                        <?php } ?>
+                          <td>&nbsp;<a href="edit_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-success">Edit</button></a> &nbsp; <a href="hapus_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-danger">Hapus</button></a> &nbsp; <a href="detail_kegiatan.php?id=<?php echo $row['id']; ?>"><button type="button" class="btn btn-info">Detail</button></a></td>
+                        </tr>
                       </tbody>
 
                   <?php }
@@ -355,9 +353,6 @@ error_reporting(0);
                     }
 
                     ?>
-
-
-
                   </ul>
                 </nav>
               </div>

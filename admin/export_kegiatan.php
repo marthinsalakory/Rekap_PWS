@@ -42,7 +42,7 @@ include '../config/koneksi.php';
             <tr>
             <td><center><?php echo $row['tanggal'] ?></td>
             <td><center><?php echo $row['operator'] ?></td>
-            <td><center><?php echo $row['jenis_aktivitas'] ?></td>
+            <td><center><?php echo $row['jenis_aktifitas'] ?></td>
             <td><center><?php echo $row['jenis_unit'] ?></td>
             <td><center><?php echo $row['lokasi'] ?></td>
             <td><center><?php echo $row['aktivitas'] ?></td>
