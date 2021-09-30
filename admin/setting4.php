@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION['role'] != 'pekerja3') {
+if ($_SESSION['role'] != 'pekerja2') {
   header("location: login.php");
 }
 include '../config/koneksi.php';

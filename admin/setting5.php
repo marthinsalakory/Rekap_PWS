@@ -159,8 +159,8 @@ error_reporting(0);
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $rrr['nama4']; ?></span>
-                <img class="img-profile rounded-circle" src=" img/<?php echo $rrr['foto4'] ?>" alt="profile">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $rrr['nama']; ?></span>
+                <img class="img-profile rounded-circle" src=" img/<?php echo $rrr['foto'] ?>" alt="profile">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -234,10 +234,10 @@ error_reporting(0);
                         <div class="col-md-4">
                           <input type="hidden" name="flama" value="<?= $d['foto']; ?>">
                           <P><b>Ganti Nama</b></p>
-                          <input class="form-control" type="text" value="<?php echo $d['nama4']; ?>" placeholder="Ganti Nama..." name="name" required>
+                          <input class="form-control" type="text" value="<?php echo $d['nama']; ?>" placeholder="Ganti Nama..." name="name" required>
 
                           <P><b>Ganti Foto Profile</b></p>
-                          <input class="form-control" type="file" value="<?php echo $d['foto4']; ?>" name="pict" accept="image/jpeg, image/png, image/svg" required>
+                          <input class="form-control" type="file" value="<?php echo $d['foto']; ?>" name="pict" accept="image/jpeg, image/png, image/svg" required>
 
                         </div>
                       </div>

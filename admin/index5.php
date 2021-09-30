@@ -193,15 +193,15 @@ $jum_bat = $row['id'];
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="profile4.php">
+                <a class="dropdown-item" href="profile5.php">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="setting4.php?id=<?php echo $rrr['id']; ?>">
+                <a class="dropdown-item" href="setting5.php?id=<?php echo $rrr['id']; ?>">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
-                <a class="dropdown-item" href="change4.php?id=<?php echo $rrr['id']; ?>">
+                <a class="dropdown-item" href="change5.php?id=<?php echo $rrr['id']; ?>">
                   <i class="fas fa-eraser fa-sm fa-fw mr-2 text-gray-400"></i>
                   Ganti Password
                 </a>

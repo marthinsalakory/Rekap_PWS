@@ -227,7 +227,7 @@ error_reporting(0);
                 </div>
 
                 <div class="col-md-4 mt-5 ">
-                  <form class="form-inline my-2 my-lg-0" action="cari_kegiatan1.php" method="get" name='cari'>
+                  <form class="form-inline my-2 my-lg-0" action="cari_kegiatan2.php" method="get" name='cari'>
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name='cari' required>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                   </form>
@@ -279,7 +279,7 @@ error_reporting(0);
                   <?php
                   if (isset($_GET['cari'])) {
                     $cari = mysqli_real_escape_string($conn, $_GET['cari']);
-                    $brg = mysqli_query($conn, "select * from kegiatan where jenis_aktivitas like '%" . $cari . "%' or jenis_unit like '%" . $cari . "%' or lokasi like '%" . $cari . "%' or aktivitas like '%" . $cari . "%'   ");
+                    $brg = mysqli_query($conn, "SELECT * FROM kegiatan WHERE tanggal LIKE '%$cari%' OR operator LIKE '%$cari%' OR helper LIKE '%$cari%' OR jenis_unit LIKE '%$cari%' OR dari_jam LIKE '%$cari%' OR sampai_jam LIKE '%$cari%' OR total LIKE '%$cari%' OR lokasi LIKE '%$cari%' OR jenis_aktifitas LIKE '%$cari%' OR aktivitas LIKE '%$cari%'");
 
                     if (mysqli_num_rows($brg) > 0) {
                       echo "<div class='col-md-10 col-sm-12 col-xs-12 ml-5'>";

@@ -302,7 +302,7 @@ include '../config/koneksi.php';
                         <select name="jenis_unit">
                           <option value="">Jenis Unit</option>
                           <?php
-                          $query = "SELECT jenis_unit FROM unit WHERE role = 'p3' GROUP BY jenis_unit";
+                          $query = "SELECT jenis_unit FROM operator WHERE role = 'p3' GROUP BY jenis_unit";
                           $sql = mysqli_query($conn, $query);
 
                           while ($data = mysqli_fetch_array($sql)) {

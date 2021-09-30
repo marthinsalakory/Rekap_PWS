@@ -273,7 +273,7 @@ error_reporting(0);
                   <?php
                   if (isset($_GET['cari'])) {
                     $cari = mysqli_real_escape_string($conn, $_GET['cari']);
-                    $brg = mysqli_query($conn, "select * from operator where tanggal like '%" . $cari . "%' or kode_operator like '%" . $cari . "%' or nama like '%" . $cari . "%' or jenis_unit like '%" . $cari . "%' or hm like '%" . $cari . "%' or jabatan like '%" . $cari . "%'");
+                    $brg = mysqli_query($conn, "SELECT * FROM operator WHERE tanggal LIKE '%$cari%' OR kode_operator LIKE '%$cari%' OR nama LIKE '%$cari%' OR nama_helper LIKE '%$cari%' OR jenis_unit LIKE '%$cari%' OR hm LIKE '%$cari%'");
 
                     if (mysqli_num_rows($brg) > 0) {
                       echo "<div class='col-md-10 col-sm-12 col-xs-12 ml-5'>";
